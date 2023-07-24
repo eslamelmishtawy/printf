@@ -11,7 +11,7 @@ int count_str(char *str)
 {
 	int string_len = 0;
 
-	while(str[string_len] && str)
+	while (str[string_len] && str)
 	{
 		write(1, &str[string_len], 1);
 		string_len++;
