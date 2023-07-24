@@ -57,6 +57,7 @@ int _printf(const char *format, ...)
 				case 'i':
 					x = va_arg(valist, int);
 					write(1, &x, 1);
+					break;
 				default:
 					return (-1);
 			}
