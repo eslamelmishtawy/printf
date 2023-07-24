@@ -9,16 +9,13 @@
 int _printf(const char *format, ...)
 {
 	va_list valist;
-	char *l;
-	unsigned int i = 0, count = 0;
+	int i = 0, count = 0;
 
 	va_start(valist, format);
-	printf("%c", format[0][1]);
-	while (format && format[i])
+	while (format[i] && format)
 	{
-		l = va_arg(valist, char *);
-		printf("%s", l);
-		printf("%c", l[0]);
+		write(1, &format[i], 1);
+		count++;
 		i++;
 	}
 	va_end(valist);
