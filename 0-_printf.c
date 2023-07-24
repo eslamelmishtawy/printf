@@ -54,10 +54,6 @@ int _printf(const char *format, ...)
 					count = count + count_str(va_arg(valist, char *));
 					count--; /* going to be added at the end of the loop */
 					break;
-				case 'i':
-					x = va_arg(valist, int);
-					write(1, &x, 1);
-					break;
 				default:
 					return (-1);
 			}
