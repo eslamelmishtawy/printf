@@ -1,51 +1,14 @@
 #include "main.h"
-#include <stdio.h>
-
-/**
- * print_int - to count and print string
- * @num: string to be counted
- * Return: return the number of char in string.
- */
-void print_int(int num){
-       	if (num < 0)
-    	{
-	 	_putchar('-');
-	 	num = -num;
-    	}
-	if (num > 9) print_int(num/10);
-	
-    	_putchar('0'+ (num%10));
- }
-/**
- * count_str - to count and print string
- * @str: string to be counted
- * Return: return the number of char in string.
- */
-int count_str(char *str)
-{
-	int string_len = 0;
-
-	while (str[string_len] && str)
-	{
-		write(1, &str[string_len], 1);
-		string_len++;
-	}
-
-	return (string_len);
-}
-
 
 /**
  * _printf - test
  * @format: kdjlasd
  * Return: tes
  */
-
 int _printf(const char *format, ...)
 {
 	va_list valist;
-	int x;
-	int i = 0, count = 0;
+	int x, i = 0, count = 0;
 	char percent;
 
 	va_start(valist, format);
@@ -73,15 +36,12 @@ int _printf(const char *format, ...)
 					x = va_arg(valist, int);
 					print_int(x);
 					break;
-
 				default:
 					return (-1);
 			}
 		}
 		else
-		{
 			write(1, &format[i], 1);
-		}
 		i++;
 		count++;
 	}

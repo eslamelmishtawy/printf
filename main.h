@@ -5,5 +5,7 @@
 #include <stdarg.h>
 int _printf(const char *format, ...);
 int _putchar(char c);
+void print_int(int num);
+int count_str(char *str);
 
 #endif
