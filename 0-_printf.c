@@ -2,11 +2,25 @@
 #include <stdio.h>
 
 /**
+ * print_int - to count and print string
+ * @num: string to be counted
+ * Return: return the number of char in string.
+ */
+void print_int(int num){
+       	if (num < 0)
+    	{
+	 	_putchar('-');
+	 	num = -num;
+    	}
+	if (num > 9) print_int(num/10);
+	
+    	_putchar('0'+ (num%10));
+ }
+/**
  * count_str - to count and print string
  * @str: string to be counted
  * Return: return the number of char in string.
  */
-
 int count_str(char *str)
 {
 	int string_len = 0;
@@ -54,6 +68,12 @@ int _printf(const char *format, ...)
 					count = count + count_str(va_arg(valist, char *));
 					count--; /* going to be added at the end of the loop */
 					break;
+				case 'i':
+				case 'd':
+					x = va_arg(valist, int);
+					print_int(x);
+					break;
+
 				default:
 					return (-1);
 			}
