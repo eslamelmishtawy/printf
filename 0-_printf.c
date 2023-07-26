@@ -8,7 +8,7 @@
 int _printf(const char *format, ...)
 {
 	va_list valist;
-	int x, i = 0, count = 0;
+	int x, int_counter, i = 0, count = 0;
 	char percent;
 
 	va_start(valist, format);
@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 				case 'i':
 				case 'd':
 					x = va_arg(valist, int);
-					print_int(x);
+					int_counter = print_int(x);
 					break;
 				default:
 					return (-1);
@@ -46,5 +46,5 @@ int _printf(const char *format, ...)
 		count++;
 	}
 	va_end(valist);
-	return (count);
+	return (count + int_counter);
 }

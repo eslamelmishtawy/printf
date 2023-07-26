@@ -5,8 +5,15 @@
  * @num: string to be counted
  * Return: return the number of char in string.
  */
-void print_int(int num)
+int print_int(int num)
 {
+	int count = 0;
+
+	if (!num)
+	{
+		return (count);
+	}
+	count++;
 	if (num < 0)
 	{
 		_putchar('-');
@@ -16,4 +23,5 @@ void print_int(int num)
 	if (num > 9)
 		print_int(num / 10);
 	_putchar('0' + (num % 10));
+	return (count);
 }
