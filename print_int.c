@@ -5,7 +5,7 @@
  * @num: string to be counted
  * Return: return the number of char in string.
  */
-void print_int(unsigned int num)
+void print_int(int num)
 {
 	if (num < 0)
 	{
