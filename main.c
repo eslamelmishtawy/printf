@@ -12,6 +12,9 @@ int main(void)
     int len;
     int len2;
 
+    len = _printf("%d\n", -1024);
+    len2 = printf("%d\n", -1024);
+    _printf("Length:[%d, %i]\n", len, len2);
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
     _printf("Length:[%d, %i]\n", len, len);

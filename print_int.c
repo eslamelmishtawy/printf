@@ -13,15 +13,20 @@ int print_int(int num)
 	{
 		return (count);
 	}
-	count++;
 	if (num < 0)
 	{
 		_putchar('-');
 		num = -num;
+		count++;
 	}
 
 	if (num > 9)
+	{
+		count++;
 		print_int(num / 10);
+	}
 	_putchar('0' + (num % 10));
+	count++;
+	count++;
 	return (count);
 }
